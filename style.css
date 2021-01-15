@@ -25,7 +25,7 @@
 }
 
 #downloads{
-    width: 87vw;
+    /* width: 87vw; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,16 +39,13 @@ iframe{
 @media (max-width: 768px){
     iframe{
         height: 80vh!important;
-    }
-    #downloads{
         width: 95vw;
-
     }
 }
 
 @media (min-width:768px){
     iframe{
-        margin: 0 50px 0 300px;
+        /* margin: 0 50px 0 300px; */
         height: 90vh!important;
     }
 }
