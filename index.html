@@ -91,6 +91,14 @@
                 }
             }, 8000);
         });
+        document.addEventListener('DOMContentLoaded', function() {
+            var iframe = document.getElementById('iframe');
+            var url = location.href;
+            if(url.includes('?download=')){
+                var urlArray = url.split('=');
+                iframe.src = urlArray[1];
+            }
+        });
     </script>
 </body>
 
