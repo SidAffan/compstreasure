@@ -93,30 +93,31 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
+            const semURL = "aHR0cHM6Ly9kb3dubG9hZHMuY29tcHN0cmVhc3VyZS5jZi9Db21wdXRlciUyMEVuZ2luZWVyaW5nJTIwVHJlYXN1cmUvU0VNJTIw";
             var iframe = document.getElementById('iframe');
-            var url = location.href;
-            if(url.includes('?download=')){
-                var urlArray = url.split('=');
-                iframe.src = urlArray[1];
+            const params = new URLSearchParams(window.location.search);
+            if(params.has('download')){
+                iframe.src = params.get('download');
             }
-            switch(location.href){
-                case 'https://compstreasure.cf/?sem3' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%203/';
+            
+            switch(params.get('sem')){
+                case '3' : 
+                    iframe.src = atob(semURL) + '3/';
                 break;
-                case 'https://compstreasure.cf/?sem4' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%204/';
+                case '4' : 
+                    iframe.src = atob(semURL) + '4/';
                 break;
-                case 'https://compstreasure.cf/?sem5' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%205/';
+                case '5' : 
+                    iframe.src = atob(semURL) + '5/';
                 break;
-                case 'https://compstreasure.cf/?sem6' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%206/';
+                case '6' : 
+                    iframe.src = atob(semURL) + '6/';
                 break;
-                case 'https://compstreasure.cf/?sem7' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%207/';
+                case '7' : 
+                    iframe.src = atob(semURL) + '7/';
                 break;
-                case 'https://compstreasure.cf/?sem8' : 
-                    iframe.src = 'https://downloads.compstreasure.cf/Computer%20Engineering%20Treasure/SEM%208/';
+                case '8' : 
+                    iframe.src = atob(semURL) + '8/';
                 break;
             //     default :
             //         iframe.src = 'https://downloads.compstreasure.cf/';
