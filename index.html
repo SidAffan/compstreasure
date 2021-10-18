@@ -59,6 +59,17 @@
             </h4>
         </div>
     </section>
+    <section class="options my-5">
+        <div class="alert alert-success" onclick="changeIframSrc(3)"><h3>Sem 3</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc(4)"><h3>Sem 4</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc(5)"><h3>Sem 5</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc(6)"><h3>Sem 6</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc(7)"><h3>Sem 7</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc(8)"><h3>Sem 8</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc('Results')"><h3>Results</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc('Courses')"><h3>Courses</h3></div>
+        <div class="alert alert-success" onclick="changeIframSrc('Competitive%20Programming')"><h3>Competitive Programming</h3></div>
+    </section>
 
     <section class="my-5" id="downloads">
         <div class="">
@@ -84,16 +95,27 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            setTimeout(() => {
-                if (confirm('Have you joined official discussion group? No , Join Now!')) {
-                    window.open("https://t.me/joinchat/UWrydMelDq-lDDVH?type=individual");
-                }
-            }, 5000);
-        });
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     setTimeout(() => {
+        //         if (confirm('Have you joined official discussion group? No , Join Now!')) {
+        //             window.open("https://t.me/joinchat/UWrydMelDq-lDDVH?type=individual");
+        //         }
+        //     }, 5000);
+        // });
+        const semURL = "aHR0cHM6Ly9kb3dubG9hZHMuY29tcHN0cmVhc3VyZS5jZi9Db21wdXRlciUyMEVuZ2luZWVyaW5nJTIwVHJlYXN1cmUvU0VNJTIw";
+        const url = 'aHR0cHM6Ly9kb3dubG9hZHMuY29tcHN0cmVhc3VyZS5jZi8=';
+        const changeIframSrc = (key) => {
+            const iframe = document.getElementById('iframe');
+            console.log(typeof key)
+            if(typeof key == 'number'){
+                iframe.src = atob(semURL) + key + '/';
+            }else{
+                iframe.src = atob(url) + key + '/';
+            }
+            iframe.scrollIntoView()
+        }
 
         document.addEventListener('DOMContentLoaded', function() {
-            const semURL = "aHR0cHM6Ly9kb3dubG9hZHMuY29tcHN0cmVhc3VyZS5jZi9Db21wdXRlciUyMEVuZ2luZWVyaW5nJTIwVHJlYXN1cmUvU0VNJTIw";
             var iframe = document.getElementById('iframe');
             const params = new URLSearchParams(window.location.search);
             if(params.has('download')){
