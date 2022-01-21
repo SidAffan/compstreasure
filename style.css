@@ -53,6 +53,13 @@ iframe{
         height: 80vh!important;
         width: 95vw;
     }
+    .options{
+        padding: 1rem   ;
+    }
+    .options div{
+        margin: .5rem;
+        padding: .7rem ;
+    }
 }
 
 @media (min-width:768px){
